@@ -11,7 +11,7 @@ const AddPosts = ({ refreshList }) => {
     const addPostUsers = async () => {
         const title = inputTitle;
         const content = inputContent;
-        const email = inputEmail;
+        const email = localStorage.getItem('user');
         await setDoc(doc(db, 'posts', `${title}-${content}-${email}`), {
             title: title,
             content: content,

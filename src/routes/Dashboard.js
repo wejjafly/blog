@@ -34,18 +34,21 @@ const Dashboard = ({ user }) => {
       }));
   
       setPosts(usersList);
+      console.log({posts})
     };
+
+    const userLogin = localStorage.getItem('user');
   
     useEffect(() => {
         getPosts();
     }, []);
-    const renderUsers = () => posts.map( element => (
+    const renderUsers = () => posts.filter(element => element.data.email === userLogin).map( element => (
         <UserPosts 
           key={element.id}
           id={element.id} 
           title={element.data.title}
           content={element.data.content}
-          email={user}
+          email={userLogin}
           refreshList={getPosts}
           user={isAuth}
         />

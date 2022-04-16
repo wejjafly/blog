@@ -11,6 +11,7 @@ const Login = () => {
             .then(response => {
                 setInputEmail('')
                 setInputPassword('')
+                localStorage.setItem('user', email)
             })
     }
     const handleSubmit = (e) => {
