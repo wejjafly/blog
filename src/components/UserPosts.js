@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { setDoc, doc, deleteDoc } from "firebase/firestore";
-import { db } from './db';
+import { db } from '../db';
 
-const UserPosts = ({id, title, content, email, refreshList}) => {
+ export const UserPosts = ({id, title, content, email, refreshList}) => {
     const [ editMode, setEditMode ] = useState(false);
     const [ inputTitle, setInputTitle] = useState(title);
     const [ inputContent, setInputContent ] = useState(content);
@@ -12,7 +12,7 @@ const UserPosts = ({id, title, content, email, refreshList}) => {
         setEditMode(prev => !prev);
     };
 
-    const editUser = async () => {
+    const editPost = async () => {
         const title = inputTitle;
         const content = inputContent;
         const email = inputEmail;
@@ -28,7 +28,7 @@ const UserPosts = ({id, title, content, email, refreshList}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        editUser();
+        editPost();
 
     }
     const handleClickDelete = async () => {
@@ -88,4 +88,3 @@ const UserPosts = ({id, title, content, email, refreshList}) => {
     )
 }
 
-export default UserPosts;

@@ -3,9 +3,10 @@ import { auth } from '../db';
 import { useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../db';
-import UserPosts from '../UserPosts';
-import AddPosts from '../AddPosts';
 import { onAuthStateChanged } from "firebase/auth";
+import {AddPosts} from "../components/AddPosts"
+import {UserPosts} from "../components/UserPosts"
+
 
 const Dashboard = ({ user }) => {
 

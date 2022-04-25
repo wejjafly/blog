@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { setDoc, doc, deleteDoc } from "firebase/firestore";
-import { db } from './db';
+import { db } from '../db';
 
 
-const AddPosts = ({ refreshList }) => {
+ export const AddPosts = ({ refreshList }) => {
     const [ inputTitle, setInputTitle] = useState('');
     const [ inputContent, setInputContent ] = useState('');
     const [ inputEmail , setInputEmail ] = useState('');
@@ -53,4 +53,3 @@ const AddPosts = ({ refreshList }) => {
     )
 }
 
-export default AddPosts;
